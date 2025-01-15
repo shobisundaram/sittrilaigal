@@ -1,0 +1,119 @@
+<div class="auto-container">
+  <div class="title-column my-4">
+    <h2>Photo Gallery</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-3">
+    <div *ngFor="let gallery of gallery; let galleryIndex = index"
+    (click)="openSlider(galleryIndex, 0)" class="relative group cursor-pointer">
+      <img
+        [src]="gallery.images[0].src"
+        alt=""
+        class="w-full h-48 object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-lg group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
+        {{ gallery.title }}
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div *ngIf="currentGalleryIndex !== null"
+  class="fixed inset-0 bg-black bg-opacity-100 flex flex-col justify-center items-center z-50">
+  <div class="z-10 absolute top-0 w-full flex justify-content-between bg-black bg-opacity-50 px-4 py-2">
+      <div class=" left-4 top-8 text-text-gray text-sm">
+          {{ currentIndex + 1 }}/{{ gallery[currentGalleryIndex].images.length }}
+      </div>
+      <div class="flex items-end gap-4 flex-row-reverse">
+        <button
+          class="text-text-gray text-3xl"
+          (click)="closeSlider()"
+        >
+          &times;
+        </button>
+      
+        <!-- download -->
+        <a
+        [href]="gallery[currentGalleryIndex].images[currentIndex].src"
+        download
+        class="text-text-gray  py-1"
+          >
+          <i class="fa fa-download" aria-hidden="true"></i>
+        </a>
+        <!-- fullScreen -->
+        <button class="text-text-gray  py-1" (click)="toggleFullscreen()">
+          <i class="fas fa-expand"></i>
+        </button>
+        <!-- Zoom Controls -->
+          <button
+              class="text-text-gray  py-1"
+              (click)="zoomIn()"
+              [disabled]="zoomLevel >= maxZoomLevel"
+              [ngClass]="{ 'opacity-50': zoomLevel >= maxZoomLevel }"
+            >
+            <i class="fa fa-search-plus"></i>
+            </button>
+            <button
+              class="text-text-gray  py-1"
+              (click)="zoomOut()"
+              [disabled]="zoomLevel <= minZoomLevel"
+              [ngClass]="{ 'opacity-50': zoomLevel <= minZoomLevel }"
+            >
+            <i class="fa fa-search-minus" aria-hidden="true"></i>
+            </button>
+            <button
+            class="text-text-gray py-1"
+            (click)="resetZoom()"
+            [disabled]="zoomLevel === 1"
+            [ngClass]="{ 'opacity-50': zoomLevel === 1 }"
+          >
+          <i class="fa-solid fa-window-restore"></i>
+        </button>
+      </div>
+  </div>
+  <img
+    [src]="gallery[currentGalleryIndex].images[currentIndex].src"
+    alt=""
+    [style.transform]="'scale(' + zoomLevel + ')'"
+    [style.transition]="'transform 0.3s ease-in-out'"
+    class="max-w-screen-lg max-h-screen mb-4 transition duration-300 ease-in-out"
+  />
+  <button
+    class="absolute top-1/2 left-4 text-white text-3xl transform -translate-y-1/2"
+    (click)="prevImage()"
+  >
+    &#8249;
+  </button>
+  <button
+    class="absolute top-1/2 right-4 text-white text-3xl transform -translate-y-1/2"
+    (click)="nextImage()"
+  >
+    &#8250;
+  </button>
+  <div
+    class="absolute bottom-0 flex space-x-2 mt-4 overflow-x-auto p-2 bg-black bg-opacity-50 w-full"
+  >
+    <div
+      *ngFor="let image of gallery[currentGalleryIndex].images; let i = index"
+      (click)="currentIndex = i"
+      class="relative cursor-pointer"
+    >
+      <img
+        [src]="image.src"
+        alt=""
+        [class]="
+          i === currentIndex
+            ? 'border-4 border-theme_color rounded opacity-100'
+            : 'border-2 border-white-400 rounded opacity-75'
+        "
+        class="w-20 h-20 object-cover transition-opacity hover:opacity-100"
+      />
+    </div>
+  </div>
+</div>
+
+
+  
+  
+ 
+
+

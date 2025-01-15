@@ -1,0 +1,103 @@
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <nav class="flex lg:items-center  container justify-content-between xl:justify-content-center">
+    <div class="flex items-center gap-2">
+      <!-- Burger Icon for Mobile -->
+      <button
+        class="block lg:block xl:hidden"
+        (click)="toggleMenu()"
+        aria-label="Toggle Menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+    </button>
+    <!-- Logo -->
+    <img src="assets/images/logo.webp" alt="Logo" class="">
+    </div>
+
+
+
+
+    <!-- Desktop Menu -->
+    <div class="hidden lg:hidden xl:flex space-x-6 mb-0 py-2">
+      <ul class="flex space-x-6 mb-0 text-sm px-8">
+        <li *ngFor="let item of menuItems" class="relative group">
+          <!-- Main Menu Item -->
+          <a
+            [href]="item.submenu ? null : item.link"
+            class="py-2 no-underline text-gray-800 hover:text-theme_color font-bold relative before:absolute before:left-0 before:top-0 before:w-0 before:h-[2px] before:bg-theme_color before:opacity-0 before:transition-all before:duration-500 group-hover:before:w-full group-hover:before:opacity-100"
+            [class.cursor-default]="item.submenu"
+            [attr.aria-haspopup]="item.submenu ? 'true' : null"
+            [attr.aria-expanded]="item.submenu ? 'false' : null"
+          >
+            {{ item.label }}
+          </a>
+        
+          <!-- Dropdown Menu -->
+          <ul
+            *ngIf="item.submenu"
+            class="absolute left-0 top-full mt-2 hidden bg-white shadow-lg  px-0 group-hover:block w-48 z-10"
+          >
+            <li
+              *ngFor="let subItem of item.submenu"
+              class=""
+            >
+              <a href="{{ subItem.link }}" class="block no-underline hover:text-white text-gray-800 px-4 py-3 hover:bg-theme_color transition-colors">
+                {{ subItem.label }}
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div class="relative">
+      <!-- Overlay for Mobile -->
+      <div
+        class="fixed inset-0 bg-black bg-opacity-25 z-40 transition-opacity duration-300"
+        *ngIf="isMenuOpen"
+        (click)="closeMenu()"
+      ></div>
+
+      <!-- Sidebar for Mobile -->
+      <aside
+        class="fixed top-0 left-0 h-full w-2/3 bg-white shadow-lg z-50 overflow-y-auto transform transition-transform duration-300 lg:hidden"
+        [ngClass]="{
+          'translate-x-0': isMenuOpen,
+          '-translate-x-full': !isMenuOpen
+        }"
+      >
+        <ul class="p-0">
+          <li
+            *ngFor="let item of menuItems"
+            class="p-3 border-b border-gray-200"
+          >
+            <a
+              href="{{ item.link }}"
+              class="no-underline block text-gray-800 hover:text-theme_color font-bold"
+              (click)="closeMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+    <button type="button" class="my-4 bg-theme_color text-white py-2 px-3.5 rounded-lg text-sm font-bold">
+      Donate
+    </button>
+  </nav>
+</header>

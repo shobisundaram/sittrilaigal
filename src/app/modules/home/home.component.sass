@@ -1,0 +1,82 @@
+.bg-agaram2
+    background-image: url('/assets/images/bg3.jpg')
+.call-to-action-section-two 
+    position: relative
+    padding: 90px 0
+    text-align: center
+    background-attachment: fixed
+    background-size: cover
+    background-repeat: no-repeat
+
+.call-to-action-section-two:before 
+    background-color: rgba(1, 1, 1, .54)
+
+.call-to-action-section-two:before 
+    position: absolute
+    content: ''
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+
+
+
+
+
+
+/* Base Ripple Span */
+.ripple 
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    background-color: rgba(255, 87, 34, 0.75)
+    transform: translate(-50%, -50%) scale(0)
+    animation: ripple-effect 3s linear infinite
+    pointer-events: none
+    z-index: 0
+
+
+/* Pseudo-element for additional ripple layers */
+.ripple::before,
+.ripple::after 
+    content: ""
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    background-color: rgba(255, 87, 34, 0.75)
+    transform: translate(-50%, -50%) scale(0)
+    animation: ripple-effect 3s linear infinite
+
+
+/* Ripple Keyframes */
+@keyframes ripple-effect 
+    0% 
+        transform: translate(-50%, -50%) scale(0.5)
+        opacity: 0.8
+    
+    100% 
+        transform: translate(-50%, -50%) scale(2.5)
+        opacity: 0
+    
+
+
+/* Adjust opacity and delay for layered effects */
+.ripple::before 
+    background-color: rgba(255, 87, 34, 0.5)
+    animation-delay: 0.5s
+
+.ripple::after 
+    background-color: rgba(255, 87, 34, 0.25)
+    animation-delay: 1s
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+<app-carousel></app-carousel>
+<div>
+    <ng-container [ngTemplateOutlet]="section_1"></ng-container>
+    <ng-container [ngTemplateOutlet]="section_2"></ng-container>
+    <ng-container [ngTemplateOutlet]="section_3"></ng-container>
+    <ng-container [ngTemplateOutlet]="section_4"></ng-container>
+    <ng-container [ngTemplateOutlet]="section_5"></ng-container>
+</div>
+
+<ng-template #section_1>
+    <section class="py-12">
+        <div class="auto-container">
+            <div class="flex flex-wrap items-center">
+            
+                <!-- Content Column -->
+                <div class="w-full lg:w-1/2 px-4">
+                    <div class="space-y-4">
+                        <div class="mb-4">
+                            <h2 class="text-3xl font-bold">
+                                Welcome To <span class="text-theme_color">Agaram</span> Foundation
+                            </h2>
+                        </div>
+                        <div class="text-gray-700 relative text-gray-800 font-normal text-sm mt-7 leading-8 max-w-[450px] mb-9 text-justify">
+                            India is on the cusp of change. The country is marching into the 21<small>st</small> century, rightly proud of all its advancements in science and technology, its spectacular improvements in infrastructure and IT. And yet, we're weighed down by devastating inequalities, by a huge population that remains untouched by well-meaning acts like the Right to Education, and a large gender inequality. At Agaram, we want to make a difference in the lives of the millions who are not yet touched by education.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Column -->
+                <div class="w-full lg:w-1/2 px-4">
+                    <div class="relative wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="overflow-hidden rounded-lg">
+                            <img class="w-full" src="https://s1.agaram.in/img/webp-img/video-img.webp" data-jpg="https://s1.agaram.in/img/rz/video-img.png" data-webp="https://s1.agaram.in/img/webp-img/video-img.webp" alt="Agaram Foundation/surya">
+                        </figure>
+                        
+                        <div class="absolute inset-0 flex items-center justify-center transition duration-300 ease-in-out">
+                            <a href="video/Agaram Foundation -- Maadham 300 -- Suriya.mp4" aria-label="Play Video" target="_blank" class="group">
+                                <button class="relative z-10 w-20 h-20 bg-[#ff5722] text-white text-lg font-bold rounded-full focus:outline-none">
+                                    <i class="fas fa-play relative z-10"></i>
+                                    <span class="ripple absolute inset-0 z-0 w-full h-full rounded-full"></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+</ng-template>
+<ng-template #section_2>
+    <section class="py-3 bg-black">
+        <div class="auto-container">
+        <div class="clearfix">
+        <div class="text-center text-white">
+        <h2>Vision</h2>
+        <div class="w-7/12 mx-auto">To bring about a significant positive change in the socio-economic status of the rural society by offering quality education to the deserving individual.</div>
+        </div>
+        </div>
+        </div>
+    </section>
+</ng-template>
+<ng-template  #section_3>
+    <section class="py-12">
+        <div class="auto-container">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/2 px-4">
+                        <div class="w-full">
+                            <img class="w-11/12 mx-auto" src="https://s1.agaram.in/img/webp-img/founder_surya.webp"  alt="Agaram Foundation/surya">
+                        </div>
+                </div>     
+                <!-- Content Column -->
+                <div class="w-full lg:w-1/2 px-4">
+                    <div class="founder_speach">
+                        <div class="sec-title">
+                        <h2> <span class="text-theme_color">Founders</span> Message</h2>
+                        </div>
+                        <div class="relative text-[#333] font-medium text-[15px] mt-[15px]">R.S. Suriya, Founder, Agaram Foundation.</div>
+                        <p class="p-2.5 relative leading-[27px] word-spacing-[1px] m-0 text-[#5d5d5d]">"I strongly believe that we can eliminate social evils and uplift the society only through education. Through Agaram, we reach out to deserving students from most backward parts of the country and provide them with opportunities to not only complete their education, but also transform into confident, competent and socially responsible individuals.</p>
+                        <p class="p-2.5 relative leading-[27px] word-spacing-[1px] m-0 text-[#5d5d5d]">"Education has got the power to make a human civilized and face the challenges of life. Education is an answer to the economic imbalance of an individual, religion and caste divide that prevails in the society and could be an important factor that blocks the above being transferred to the next generation."</p>
+                        <p class="p-2.5 relative leading-[27px] word-spacing-[1px] m-0 text-[#5d5d5d]">"I am confident that the beneficiaries of Agaram, whom we nurture today, will soon become the much needed catalysts to bring about the positive transformation in their families, communities and society at large."</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</ng-template>
+<ng-template #section_4>
+    <section class="call-to-action-section-two lazy-background bg-agaram2">
+        <div class="auto-container">
+            <a href="donate" class="no-underline"> 
+                <h2 class="pb-7 font-bold text-3xl relative before:absolute before:left-1/2 before:bottom-5 before:h-0.5 before:w-11 before:-ml-[22px] before:bg-[#ff5722] before:content-[''] text-white">
+                    Your Small Help will<span class="font-caveat text-theme_color text-4xl"> #change<i class="text-white">a</i>life</span>
+                  </h2>
+            </a>
+            </div> 
+    </section>
+</ng-template>
+
+<ng-template #section_5>
+    <section class="py-12">
+        <div class="auto-container">
+            <h2 class="pb-7 !mb-12 relative before:absolute before:left-5 before:bottom-0 before:bottom-5 before:h-0.5 before:w-11 before:-ml-[22px] before:bg-black before:content-['']">Recent<span class="text-theme_color">Social</span>Updates</h2>
+        </div>
+    </section>
+</ng-template>

@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base
+@tailwind components
+@tailwind utilities
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap'
+@import '@angular/material/prebuilt-themes/indigo-pink.css'
+
+.auto-container 
+    position: static
+    max-width: 1200px
+    padding: 10px 15px
+    margin: 0 auto
+
+.container 
+    max-width: 1140px
+
+.input
+    position: relative
+    display: block
+    width: 50%
+    line-height: 28px
+    height: 50px
+    font-size: 15px
+    color: #fff
+    font-weight: 400
+    padding: 10px 50px 10px 30px
+    background: 0
+    border-radius: 50px
+    -webkit-transition: all .3s ease
+    -o-transition: all .3s ease
+    transition: all .3s ease
+    border: 1px solid rgba(255, 255, 255, .4)
+
+.emailed-form .form-group 
+    position: relative
+    display: block
+    margin: 0 auto
+    width: 100%
+
+.emailed-form button
+    left: 45%
+    top: 0
+    background-color: #ff6c3d
+    position: absolute
+    right: 8%
+    height: 50px
+    line-height: 40px
+    color: #fff
+    font-size: 14px
+    text-align: center
+    background: 0
+    width: 100px
+    font-weight: 700
+    border-radius: 0 50px 50px 0
+    background-color: #ff5722
+    text-transform: capitalize
+    font-family: roboto slab, serif
+
+.title-column 
+  position: relative
+  padding-left: 20px
+
+
+.title-column::before 
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  width: 3px
+  height: 100%
+  @apply bg-theme_color
+
+label
+    margin-bottom: 4px
+.form-group
+    margin-bottom: 7px
+.error
+    color: red
+
+.button
+    background-color: #ff5722
+    padding: 10px 
+    color: white 
+    

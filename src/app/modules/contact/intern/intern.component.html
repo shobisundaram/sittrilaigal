@@ -1,0 +1,83 @@
+<div class="auto-container">
+    <div class="title-column my-4">
+        <h2>For Intern</h2>
+    </div>
+    <div class="form-container auto-container lg:w-2/4 md:w-full">
+        <mat-card>
+            <mat-card-header class="bg-theme_color text-theme_text">
+                <p class="font-bold">Submit your Resume</p>
+            </mat-card-header>
+            <mat-card-content class="py-3">
+                <form [formGroup]="interform">
+                    <!-- Name Field -->
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        formControlName="name"
+                        placeholder="Enter your name"
+                      />
+                      <div *ngIf="isInvalid('name')" class="error">
+                        Name is required (min 3 characters).
+                      </div>
+                    </div>
+                
+                    <!-- Email Field -->
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        formControlName="email"
+                        placeholder="Enter your email"
+                      />
+                      <div *ngIf="isInvalid('email')" class="error">
+                        A valid email is required.
+                      </div>
+                    </div>
+                
+                    <!-- Phone Number Field -->
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        class="form-control"
+                        formControlName="phone"
+                        placeholder="Enter your 10-digit phone number"
+                      />
+                      <div *ngIf="isInvalid('phone')" class="error">
+                        A valid 10-digit phone number is required.
+                      </div>
+                    </div>
+                
+                    <!-- Resume Upload Field -->
+                    <div class="form-group">
+                      <label for="resume">Resume</label>
+                      <input
+                        type="file"
+                        id="resume"
+                        class="form-control"
+                        formControlName="resume"
+                        (change)="onFileChange($event)"
+                        placeholder="Upload your resume"
+                      />
+                      <div *ngIf="isInvalid('resume')" class="error">
+                        Resume file is required.
+                      </div>
+                    </div>   
+                  </form>
+            </mat-card-content>
+            <mat-card-footer class="text-center p-3">
+                <button type="submit" (click)="onSubmit()" class="bg-theme_color text-theme_text py-2 px-4  rounded-lg" [disabled]="interform.invalid">Submit</button>
+            </mat-card-footer>
+        </mat-card> 
+
+      </div>
+      
+      
+      
+</div>

@@ -1,0 +1,55 @@
+<div class="auto-container">
+    <div class="title-column my-4">
+        <h2>Contact Us</h2>
+    </div>
+    <google-map
+      [center]="center"
+      [zoom]="zoom"
+      [options]="mapOptions"
+      height="400px"
+      width="100%">
+      <map-marker [position]="center" [label]="''"></map-marker>
+    </google-map>
+  </div>
+  <section class="contact-section py-24 map-bg bg-no-repeat bg-center" style="background-image: url(assets/images/map-pattern.png)">
+
+    <div class="auto-container">
+        <div class="sec-title centered mb-16">
+            <h2 class="pb-7 mb-0 font-bold text-3xl relative before:absolute before:left-1/2 before:bottom-5 before:h-0.5 before:w-11 before:-ml-[22px] before:bg-[#000] before:content-[''] text-center"><span class="text-theme_color">Contact </span> Us</h2>
+            <div style="font-size: 19px;" class="mb-7 text-center">We'd love to hear from you Comments, suggestions and questions are always welcome</div>
+        </div>
+
+        <div class="row clearfix mb-16">
+            <div class="info-column col-lg-4 col-md-6 col-sm-12 flex justify-center">
+                <div class="inner-column">
+                    <div class="icon-box">
+                        <span class="icon flaticon-location"></span>
+                    </div>
+                    <h6 class="text-md">Address:</h6>
+                    <div class="text-md">Krishna street, T.Nagar, Chennai - 600 017 <br> Tamil Nadu, India.</div>
+                </div>
+            </div>
+
+            <div class="info-column col-lg-4 col-md-6 col-sm-12 flex justify-center">
+                <div class="inner-column">
+                    <div class="icon-box">
+                        <span class="icon flaticon-call"></span>
+                    </div>
+
+                    <h6 class="text-md">Phone:</h6>
+                    <div class="text-md">+91 98765 43210 </div>
+                </div>
+            </div>
+
+            <div class="info-column col-lg-4 col-md-6 col-sm-12 flex justify-center">
+                <div class="inner-column">
+                    <div class="icon-box">
+                        <span class="icon flaticon-email-1"></span>
+                    </div>
+                    <h6 class="text-md">Email:</h6>
+                    <div class="text-md">test&#64;gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
